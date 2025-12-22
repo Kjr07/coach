@@ -4,5 +4,6 @@ public enum SportType {
     RUNNING,
     CYCLING,
     SWIMMING,
+    WALKING,
     OTHER
 }
