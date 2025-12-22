@@ -105,4 +105,23 @@ class ActivityStats {
         return minutes / km; // minutes per km
     }
 
+    public static double calories(Activity activity, double weightKg) {
+        if (weightKg <= 0) return 0;
+
+        long seconds = totalDurationSeconds(activity);
+        if (seconds <= 0) return 0;
+
+        double hours = seconds / 3600.0;
+
+        double multiplier = switch (activity.getSport()) {
+            case RUNNING -> 9.8;
+            case CYCLING -> 8.5;
+            case WALKING -> 3.5;
+            case SWIMMING -> 6.0;
+            default -> 5.0; // ασφαλές fallback
+        };
+
+        return multiplier * weightKg * hours;
+    }
+
 }
