@@ -197,6 +197,8 @@ public class TcxActivityReader {
                 return SportType.CYCLING;
             case "swimming":
                 return SportType.SWIMMING;
+            case "walking":
+                return SportType.WALKING;
             default:
                 return SportType.OTHER;
         }
