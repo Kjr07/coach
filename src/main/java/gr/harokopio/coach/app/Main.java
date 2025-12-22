@@ -64,6 +64,10 @@ public class Main {
                  System.out.println("Total trackpoints: " + points);
                  System.out.println("Sport: " + activity.getSport());
                  System.out.println("Laps: " + activity.getLaps().size());
+                 if (weight != null) {
+                     double calories = ActivityStats.calories(activity, weight);
+                     System.out.printf("Calories: %.2f kcal%n", calories);
+                 }
                  System.out.println("--------------------");
              }
         }
